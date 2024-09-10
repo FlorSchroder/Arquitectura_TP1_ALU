@@ -21,7 +21,7 @@ module alu
         OP_NOR = 6'b100111                                                                      ;
 
 
-    always (*) begin
+    always @(*) begin
         case(i_operation)
             OP_ADD: begin
                 result = i_datoA + i_datoB                                                      ;
@@ -45,7 +45,7 @@ module alu
                 result = i_datoA >> i_datoB                                                     ;
             end                                         
             OP_NOR: begin                                           
-                result = i_datoA ~| i_datoB                                                     ;
+                result = ~| i_datoA                                                             ;
             end                                         
             default: begin                                          
                 result = result                                                                 ;

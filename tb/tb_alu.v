@@ -2,26 +2,26 @@
 
 module tb_alu;
 
-    reg             clk                                                 ;
+    //reg             clk                                                 ;
     reg    [3:0]   i_datoA                                              ;
     reg    [3:0]   i_datoB                                              ;
     reg    [5:0]   i_operation                                          ;    
     wire   [3:0]   o_leds                                               ;
 
     alu u_alu
-    {
+    (
 //        .clk(clk)                               ,
         .i_datoA(i_datoA)                                               ,
         .i_datoB(i_datoB)                                               ,
         .i_operation(i_operation)                                       ,
         .o_leds(o_leds)             
-    };
+    );
 
-    always #50 clk ~= clk;
+    //always #50 clk ~= clk;
 
 
     initial begin
-        clk = 0                                                         ;
+        //clk = 0                                                         ;
         i_datoA = 4'h0                                                  ;
         i_datoB = 4'h0                                                  ;
         i_operation = 6'b000000                                         ;
