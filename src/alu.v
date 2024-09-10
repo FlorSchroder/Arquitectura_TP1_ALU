@@ -1,7 +1,7 @@
 
 module alu 
 (
-    input   wire            clk                                                                 ,
+//    input   wire            clk                                                                 ,
     input   wire    [3:0]   i_datoA                                                             ,
     input   wire    [3:0]   i_datoB                                                             ,
     input   wire    [5:0]   i_operation                                                         ,    
