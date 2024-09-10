@@ -45,7 +45,7 @@ module alu
                 result = i_datoA >> i_datoB                                                     ;
             end                                         
             OP_NOR: begin                                           
-                result = ~| i_datoA                                                             ;
+                result = ~(i_datoA | i_datoB)                                                   ;
             end                                         
             default: begin                                          
                 result = result                                                                 ;
