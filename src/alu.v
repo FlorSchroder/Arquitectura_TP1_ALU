@@ -12,17 +12,17 @@ module alu
     output  wire    [NB_DATA-1:0]   o_leds                                                        //! output  
 );
 
-    reg [3:0] result ;
-
-    localparam [5:0]
-        OP_ADD = 6'b100000                                                                      ,
-        OP_SUB = 6'b100010                                                                      ,
-        OP_AND = 6'b100100                                                                      ,
-        OP_OR  = 6'b100101                                                                      ,
-        OP_XOR = 6'b100110                                                                      ,
-        OP_SRA = 6'b000011                                                                      ,
-        OP_SRL = 6'b000010                                                                      ,
-        OP_NOR = 6'b100111                                                                      ;
+    reg [3:0] result ; //! Resultado de la operación
+    
+    localparam [5:0] //! Operation cases
+        OP_ADD = 6'b100000                                                                      , //! ADD operation
+        OP_SUB = 6'b100010                                                                      , //! SUB operation
+        OP_AND = 6'b100100                                                                      , //! AND operation
+        OP_OR  = 6'b100101                                                                      , //! OR  operation
+        OP_XOR = 6'b100110                                                                      , //! XOR operation
+        OP_SRA = 6'b000011                                                                      , //! SRA operation (Shift Right Arithmetic)
+        OP_SRL = 6'b000010                                                                      , //! SRL operation (Shift Right Logical)
+        OP_NOR = 6'b100111                                                                      ; //! NOR operation
 
 
     always @(*) begin
