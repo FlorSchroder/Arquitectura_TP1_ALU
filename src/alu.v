@@ -5,7 +5,8 @@ module alu
     parameter NB_OP     = 6  //! BITs de operaciones
 )
 (
-//    input   wire            clk                                                                 ,
+    input   wire            clk                                                                 , //! clock
+    input   wire                    i_rst_n                                                     , //! Reset
     input   wire    [NB_DATA-1:0]   i_datoA                                                     , //! Dato de entrada
     input   wire    [NB_DATA-1:0]   i_datoB                                                     , //! Dato de entrada
     input   wire    [NB_OP - 1:0]   i_operation                                                 , //! Operación a realizar    
@@ -57,9 +58,13 @@ module alu
         endcase
     end
 
+    always @(posedge clk or negedge i_rst_n) begin
+        if (!i_rst_n) begin
+          result <= 6'b000000;
+        end
+    end
 
     assign o_leds = result;
-
 
 
     //always @(posedge clk ) <=
