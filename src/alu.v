@@ -1,15 +1,15 @@
 
 module alu
 #(
-    parameter NB_DATA   = 4,
-    parameter NB_OP     = 6
+    parameter NB_DATA   = 4, //! BITs de datos y LEDs
+    parameter NB_OP     = 6  //! BITs de operaciones
 )
 (
 //    input   wire            clk                                                                 ,
-    input   wire    [NB_DATA-1:0]   i_datoA                                                     ,
-    input   wire    [NB_DATA-1:0]   i_datoB                                                     ,
-    input   wire    [NB_OP - 1:0]   i_operation                                                 ,    
-    output  wire    [NB_DATA-1:0]   o_leds
+    input   wire    [NB_DATA-1:0]   i_datoA                                                     , //! Dato de entrada
+    input   wire    [NB_DATA-1:0]   i_datoB                                                     , //! Dato de entrada
+    input   wire    [NB_OP - 1:0]   i_operation                                                 , //! Operación a realizar    
+    output  wire    [NB_DATA-1:0]   o_leds                                                        //! output  
 );
 
     reg [3:0] result ;
