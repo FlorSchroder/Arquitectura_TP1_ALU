@@ -9,6 +9,10 @@ module tb_alu;
     wire   [3:0]   o_leds                                               ;
 
     alu u_alu
+    #(
+        .ND_DATA(4)                                                     ,
+        .NB_OP(6)
+    )
     (
 //        .clk(clk)                               ,
         .i_datoA(i_datoA)                                               ,

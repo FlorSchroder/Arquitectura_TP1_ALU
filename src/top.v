@@ -6,6 +6,8 @@ module top
     output  wire [3:0]  o_leds                  ,
     input   wire        clk
 );
+localparam DATA = 4                             ;
+localparam OP   = 6                             ;
 
 /*
 
@@ -24,6 +26,10 @@ end else begin
 end
 
 alu u_alu
+#(
+    .NB_DATA(DATA)                              ,
+    .NB_OP(OP)
+)
 (
     .i_datoA(datoA)                             ,
     .i_datoB(datoB)                             ,

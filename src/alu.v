@@ -1,11 +1,15 @@
 
-module alu 
+module alu
+#(
+    parameter NB_DATA   = 4,
+    parameter NB_OP     = 6
+)
 (
 //    input   wire            clk                                                                 ,
-    input   wire    [3:0]   i_datoA                                                             ,
-    input   wire    [3:0]   i_datoB                                                             ,
-    input   wire    [5:0]   i_operation                                                         ,    
-    output  wire    [3:0]   o_leds
+    input   wire    [NB_DATA-1:0]   i_datoA                                                     ,
+    input   wire    [NB_DATA-1:0]   i_datoB                                                     ,
+    input   wire    [NB_OP - 1:0]   i_operation                                                 ,    
+    output  wire    [NB_DATA-1:0]   o_leds
 );
 
     reg [3:0] result ;
