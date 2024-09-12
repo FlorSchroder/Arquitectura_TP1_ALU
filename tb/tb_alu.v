@@ -2,8 +2,8 @@
 
 module tb_alu;
 
-    reg             clk                                                 ;
-    reg            i_rst_n                                              ;
+    //reg             clk                                                 ;
+    //reg            i_rst_n                                              ;
     reg    [3:0]   i_datoA                                              ;
     reg    [3:0]   i_datoB                                              ;
     reg    [5:0]   i_operation                                          ;    
@@ -16,8 +16,8 @@ module tb_alu;
     )
      u_alu
     (
-        .clk(clk)                                                       ,
-        .i_rst_n(i_rst_n)                                               ,
+        //.clk(clk)                                                       ,
+        //.i_rst_n(i_rst_n)                                               ,
         .i_datoA(i_datoA)                                               ,
         .i_datoB(i_datoB)                                               ,
         .i_operation(i_operation)                                       ,
@@ -29,9 +29,9 @@ module tb_alu;
 
     initial begin
         clk = 0                                                         ;
-        i_rst_n =0                                                      ;
+        //i_rst_n =0                                                      ;
         # 10
-        i_rst_n = 1                                                     ;
+        //i_rst_n = 1                                                     ;
         i_datoA = 4'h0                                                  ;
         i_datoB = 4'h0                                                  ;
         i_operation = 6'b000000                                         ;
