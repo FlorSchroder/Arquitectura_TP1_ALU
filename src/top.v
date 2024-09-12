@@ -1,11 +1,11 @@
 module top
 (
-    input   wire [5:0]  i_dato                                   , //! Dato de entrada
+    input wire signed    [5:0]  i_dato                           , //! Dato de entrada
     //input   wire [5:0]  i_operation             , //! Operación a realizar
-    input   wire [1:0]  i_sw                                     , //! Selector: i_sw = 00 ----> Dato A || i_sw = 01 ----> Dato B || i_sw = 10 ----> Op
-    input   wire        i_rst_n                                  ,
-    output  wire [3:0]  o_leds                                   , //! output
-    input   wire        clk
+    input           wire [1:0]  i_sw                             , //! Selector: i_sw = 00 ----> Dato A || i_sw = 01 ----> Dato B || i_sw = 10 ----> Op
+    input           wire        i_rst_n                          ,
+    output          wire [3:0]  o_leds                           , //! output
+    input           wire        clk
 );
 
     localparam NB_DATA = 4                                       ;
@@ -49,8 +49,8 @@ module top
     )
     u_alu
     (
-        .clk(clk)                                               ,
-        .i_rst_n(i_rst_n)                                       ,
+        //.clk(clk)                                               ,
+        //.i_rst_n(i_rst_n)                                       ,
         .i_datoA(datoA)                                         ,
         .i_datoB(datoB)                                         ,
         .i_operation(op)                                        ,
