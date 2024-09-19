@@ -1,11 +1,10 @@
-# Arquitectura de Computadoras
-
+![fcefyn](/home/leonel/Desktop/Arqui/tp1_ALU/img/fcefyn_logo.png)
 En este repositorio se desarrolla el trabajo práctico 1 de la materia Arquitectura de Computadoras.
 Este proyecto fue realizado por los alumnos: 
 - [Mansilla, Josías Leonel](https://github.com/w3rqil)
-
+    - leonel.mansilla@mi.unc.edu.ar
 - [Schroder Ferrando, Florencia](https://github.com/FlorSchroder) 
-
+    - florencia.schroder@mi.unc.edu.ar
 # Consigna
 
 • Implementar en FPGA una ALU.
@@ -24,7 +23,7 @@ Más información y detalles de la consigna en [Trabajo_Practico_N_1_-_ALU.pdf](
 Para el desarrollo del trabajo práctico se implementaron dos módulos, el primero que comprende la lógica de la [alu](/src/alu.v) y el segundo es un [top](/src/top.v) a función de 'wrapper'.
 ## Jerarquía de archivos
 
-![jerarquia](/img/files_hierarchy.png)
+![jerarquia](/home/leonel/Desktop/Arqui/tp1_ALU/img/files_hierarchy.png)
 
 
 ## Module ALU
@@ -33,7 +32,7 @@ Este módulo comprende una lógica combinacional sencilla que tiene en cuenta to
 
 A continuación un diagrama del módulo donde se pueden ver sus entradas y salidas:
 
-![diagram_ALU](/doxy/alu.svg)
+![diagram_ALU](/home/leonel/Desktop/Arqui/tp1_ALU/doxy/alu.svg)
 
 ### Generics
 
@@ -81,7 +80,7 @@ Este módulo genera una instancia del módulo tiene una entrada i_dato de 6 bits
 
 A continuació un diagrama del módulo top:
 
-![Diagram_TOP](/doxy/top.svg)
+![Diagram_TOP](/home/leonel/Desktop/Arqui/tp1_ALU/doxy/top.svg)
 
 
 ### Ports
@@ -112,35 +111,35 @@ Para comprobar el funcionamiento del código se realizaron dos módulos de testb
 
 A continuación se presentan waveform y console log generados luego de ejecutar el testbench del módulo ALU. Se puede ver el correcto funcionamiento del módulo.
 
-![tb_ALU_wvfm](/img/tb_ALU_waveform.png)
+![tb_ALU_wvfm](/home/leonel/Desktop/Arqui/tp1_ALU/img/tb_ALU_waveform.png)
 
-![tb_ALU_cl](/img/tb_ALU_consolelog.png)
+![tb_ALU_cl](/home/leonel/Desktop/Arqui/tp1_ALU/img/tb_ALU_consolelog.png)
 
 ### TB TOP
 
 A continuación se presentan waveform y console log generados luego de ejecutar el testbench del módulo TOP. Se puede ver la presencia del clock y el correcto funcionamiento del sistema analizando los resultados.
 
-![tb_TOP_wvfm](/img/tb_TOP_waveform.png)
+![tb_TOP_wvfm](/home/leonel/Desktop/Arqui/tp1_ALU/img/tb_TOP_waveform.png)
 
-![tb_TOP_cl](/img/tb_TOP_consolelog.png)
+![tb_TOP_cl](/home/leonel/Desktop/Arqui/tp1_ALU/img/tb_TOP_consolelog.png)
 
 ## Schematic
 
 Luego de generar el bitstream, o luego de correr la implementación, se puede observar el diseño implementado (FPGA):
 
-![implemented_design](/img/implemented_design.png)
+![implemented_design](/home/leonel/Desktop/Arqui/tp1_ALU/img/implemented_design.png)
 
 se puede ver el esquemático del proyecto yendo a IMPLEMENTATION -> Open Implemented Design -> schematic
 
-![schematic_path](/img/schematic_path.png)
+![schematic_path](/home/leonel/Desktop/Arqui/tp1_ALU/img/schematic_path.png)
 
 A continuación el esquemático del proyecto completo (top):
 
-![top_sch](/img/top_schematic.png)
+![top_sch](/home/leonel/Desktop/Arqui/tp1_ALU/img/top_schematic.png)
 
 Haciendo click en el **+** que se encuentra en la esquina izquierda superior del módulo ALU, podemos ver el esquemático del mismo:
 
-![alu_sch](/img/alu_schematic.png)
+![alu_sch](/home/leonel/Desktop/Arqui/tp1_ALU/img/alu_schematic.png)
 
 
 
