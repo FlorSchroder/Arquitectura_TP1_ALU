@@ -5,11 +5,30 @@ Este proyecto fue realizado por los alumnos:
     - leonel.mansilla@mi.unc.edu.ar
 - [Schroder Ferrando, Florencia](https://github.com/FlorSchroder) 
     - florencia.schroder@mi.unc.edu.ar
+
+
+
+
+
+
+
+
+
+
+
+
+
+----
+----
+
+----
+
+
 # Consigna
 
 • Implementar en FPGA una ALU.
 • La ALU debe ser parametrizable (bus de datos) para
-poder ser utilizada posteriormente en el trabajo final.
+poder ser utilizada postersiormente en el trabajo final.
 • Validar el desarrollo por medio de Test Bench.
 • El testbench debe incluir generación de entradas
 aleatorias y código de chequeo automático.
