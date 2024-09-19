@@ -1,5 +1,5 @@
 # Ignorar la carpeta /doxy
-/doxy/
+/doxy
 
 # Ignorar archivos específicos README
 README.pdf
