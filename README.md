@@ -33,7 +33,7 @@ Este módulo comprende una lógica combinacional sencilla que tiene en cuenta to
 
 A continuación un diagrama del módulo donde se pueden ver sus entradas y salidas:
 
-![diagram_ALU](/TerosHDL/alu.svg)
+![diagram_ALU](/doxy/alu.svg)
 
 ### Generics
 
@@ -81,7 +81,7 @@ Este módulo genera una instancia del módulo tiene una entrada i_dato de 6 bits
 
 A continuació un diagrama del módulo top:
 
-![Diagram_TOP](/TerosHDL/top.svg)
+![Diagram_TOP](/doxy/top.svg)
 
 
 ### Ports
