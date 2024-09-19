@@ -1,4 +1,4 @@
-![fcefyn]( /img/fcefyn_logo.png)
+![fcefyn](  /img/fcefyn_logo.png)
 En este repositorio se desarrolla el trabajo práctico 1 de la materia Arquitectura de Computadoras.
 Este proyecto fue realizado por los alumnos: 
 - [Mansilla, Josías Leonel](https://github.com/w3rqil)
@@ -42,7 +42,7 @@ Más información y detalles de la consigna en [Trabajo_Practico_N_1_-_ALU.pdf](
 Para el desarrollo del trabajo práctico se implementaron dos módulos, el primero que comprende la lógica de la [alu](/src/alu.v) y el segundo es un [top](/src/top.v) a función de 'wrapper'.
 ## Jerarquía de archivos
 
-![jerarquia]( /img/files_hierarchy.png)
+![jerarquia](  /img/files_hierarchy.png)
 
 
 ## Module ALU
@@ -51,7 +51,7 @@ Este módulo comprende una lógica combinacional sencilla que tiene en cuenta to
 
 A continuación un diagrama del módulo donde se pueden ver sus entradas y salidas:
 
-![diagram_ALU]( /doxy/alu.svg)
+![diagram_ALU](  /doxy/alu.svg)
 
 ### Generics
 
@@ -99,7 +99,7 @@ Este módulo genera una instancia del módulo tiene una entrada i_dato de 6 bits
 
 A continuació un diagrama del módulo top:
 
-![Diagram_TOP]( /doxy/top.svg)
+![Diagram_TOP](  /doxy/top.svg)
 
 
 ### Ports
@@ -130,35 +130,35 @@ Para comprobar el funcionamiento del código se realizaron dos módulos de testb
 
 A continuación se presentan waveform y console log generados luego de ejecutar el testbench del módulo ALU. Se puede ver el correcto funcionamiento del módulo.
 
-![tb_ALU_wvfm]( /img/tb_ALU_waveform.png)
+![tb_ALU_wvfm](  /img/tb_ALU_waveform.png)
 
-![tb_ALU_cl]( /img/tb_ALU_consolelog.png)
+![tb_ALU_cl](  /img/tb_ALU_consolelog.png)
 
 ### TB TOP
 
 A continuación se presentan waveform y console log generados luego de ejecutar el testbench del módulo TOP. Se puede ver la presencia del clock y el correcto funcionamiento del sistema analizando los resultados.
 
-![tb_TOP_wvfm]( /img/tb_TOP_waveform.png)
+![tb_TOP_wvfm](  /img/tb_TOP_waveform.png)
 
-![tb_TOP_cl]( /img/tb_TOP_consolelog.png)
+![tb_TOP_cl](  /img/tb_TOP_consolelog.png)
 
 ## Schematic
 
 Luego de generar el bitstream, o luego de correr la implementación, se puede observar el diseño implementado (FPGA):
 
-![implemented_design]( /img/implemented_design.png)
+![implemented_design](  /img/implemented_design.png)
 
 se puede ver el esquemático del proyecto yendo a IMPLEMENTATION -> Open Implemented Design -> schematic
 
-![schematic_path]( /img/schematic_path.png)
+![schematic_path](  /img/schematic_path.png)
 
 A continuación el esquemático del proyecto completo (top):
 
-![top_sch]( /img/top_schematic.png)
+![top_sch](  /img/top_schematic.png)
 
 Haciendo click en el **+** que se encuentra en la esquina izquierda superior del módulo ALU, podemos ver el esquemático del mismo:
 
-![alu_sch]( /img/alu_schematic.png)
+![alu_sch](  /img/alu_schematic.png)
 
 
 
@@ -166,6 +166,23 @@ Haciendo click en el **+** que se encuentra en la esquina izquierda superior del
 
 
 Para al implementación física del proyecto se utilizó la placa FPGA Basys3.
-![basys3]( /img/basys3.png)
+![basys3](  /img/basys3.png)
 Para mapear las entradas y salidas del módulo (top) a pines de la FPGA, se utiliza la "constrain" que es un archivo **.xdc** donde se indica la relación pin - puerto.
 La información respecto a los pines de la placa se sacó del [manual](https://digilent.com/reference/_media/basys3:basys3_rm.pdf?srsltid=AfmBOopBRMOUHZG2_Xn86jTcK6dT0e-yzTtUlj_K6XpYx0ugkVC3I6mR)
+
+## Instrucciones 
+
+Para utilizar el proyecto, una vez implementado en la FPGA:
+1) Primero que nada se debe sacar el top del reset. ```i_rst_n``` al ser un reset asíncrono este es activo por bajo por lo que deberemos dejar su pin en alto todo el tiempo. 
+2) Luego con los pines indicados se podran ingresar datos. El dato dependerá de los pines **SW** de la forma:
+    SW = 00 --> DatoA
+    SW = 01 --> DatoB
+    SW = 10 --> OP
+3) Para cargar el dato ingresado, deberemos activar el reset síncrono ```i_soft_reset``` que es activo por alto.
+4) El resultado visible de la operación ```o_leds```, es decir la salida, cambiará únicamente cuando una nueva operación sea ingresada.
+
+A continuación un diagrama visible con los pines correspondientes a los puertos:
+
+![pinaje]( /img/pin_schematic.png)
+
+
