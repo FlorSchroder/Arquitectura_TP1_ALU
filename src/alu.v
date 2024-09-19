@@ -5,15 +5,15 @@ module alu
     parameter NB_OP     = 6  //! BITs de operaciones
 )
 (
-    //input   wire            clk                                                                 , //! clock
-    //input   wire                    i_rst_n                                                     , //! Reset
+    input   wire                           i_valid                                              , //! valid para cambiar la salida
     input   wire    signed [NB_DATA-1:0]   i_datoA                                              , //! Dato de entrada
     input   wire    signed [NB_DATA-1:0]   i_datoB                                              , //! Dato de entrada
     input   wire    [NB_OP - 1:0]   i_operation                                                 , //! Operación a realizar    
     output  wire    signed [NB_DATA-1:0]   o_leds                                                 //! output  
 );
 
-    reg signed [NB_DATA-1:0] result ; //! Resultado de la operación
+    reg signed [NB_DATA-1:0] result                                                             ; //! Resultado de la operación
+    reg signed [NB_DATA-1:0] aux_result = 8'h00                                                 ; //! Resultado auxiliar
     
     localparam [NB_OP-1:0] //! Operation cases
         OP_ADD = 6'b100000                                                                      , //! ADD operation
@@ -56,6 +56,7 @@ module alu
                 result = result                                                                 ;
             end
         endcase
+        aux_result = i_valid ? result : aux_result;
     end
 
 //    always @(posedge clk or negedge i_rst_n) begin
@@ -63,8 +64,8 @@ module alu
 //          result <= 6'b000000;
 //        end
 //    end
-
-    assign o_leds = result;
+    
+    assign o_leds = i_valid ? result : aux_result;
 
 
     //always @(posedge clk ) <=
