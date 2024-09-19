@@ -6,7 +6,8 @@ module tb_alu;
     //reg            i_rst_n                                              ;
     reg    signed [3:0]   i_datoA                                       ;
     reg    signed [3:0]   i_datoB                                       ;
-    reg    [5:0]   i_operation                                          ;    
+    reg    [5:0]   i_operation                                          ; 
+    reg                   i_valid                                       ;   
     wire   signed [3:0]   o_leds                                        ;
 
     alu 
@@ -14,10 +15,9 @@ module tb_alu;
         .ND_DATA(4)                                                     ,
         .NB_OP(6)
     )
-     u_alu
+     u_alu  
     (
-        //.clk(clk)                                                       ,
-        //.i_rst_n(i_rst_n)                                               ,
+        .i_valid(i_valid)                                               ,
         .i_datoA(i_datoA)                                               ,
         .i_datoB(i_datoB)                                               ,
         .i_operation(i_operation)                                       ,
@@ -31,13 +31,13 @@ module tb_alu;
         //clk = 0                                                         ;
         //i_rst_n =0                                                      ;
         # 10
-        //i_rst_n = 1                                                     ;
+        i_valid = 1'b0                                                  ;
         i_datoA = 4'sh0                                                 ;
         i_datoB = 4'sh0                                                 ;
         i_operation = 6'b000000                                         ;
 
         # 100
-
+        i_valid = 1'b1                                                  ;
         i_datoA = 4'sb0011                                              ;  // 3
         i_datoB = 4'sb0101                                              ;  // 5
         i_operation = 6'sb100000                                        ;  // OP_ADD
