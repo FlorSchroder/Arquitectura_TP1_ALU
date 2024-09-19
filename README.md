@@ -143,5 +143,10 @@ Haciendo click en el **+** que se encuentra en la esquina izquierda superior del
 
 
 
+# Implementación
 
 
+Para al implementación física del proyecto se utilizó la placa FPGA Basys3.
+![basys3](/home/leonel/Desktop/Arqui/tp1_ALU/img/basys3.png)
+Para mapear las entradas y salidas del módulo (top) a pines de la FPGA, se utiliza la "constrain" que es un archivo **.xdc** donde se indica la relación pin - puerto.
+La información respecto a los pines de la placa se sacó del [manual](https://digilent.com/reference/_media/basys3:basys3_rm.pdf?srsltid=AfmBOopBRMOUHZG2_Xn86jTcK6dT0e-yzTtUlj_K6XpYx0ugkVC3I6mR)
