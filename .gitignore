@@ -1,0 +1,8 @@
+# Ignorar la carpeta /doxy
+/doxy/
+
+# Ignorar archivos específicos README
+README.pdf
+README.jpeg
+README.html
+README.png
